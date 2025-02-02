@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Frozent yogurt - Đăng nhập</title>
+    <link rel="icon" href="../images/favicon.ico">
+    <link rel="stylesheet" href="../css/styles.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css"/>
+    <script src="../js/scripts.js"></script>
+</head>
+<body>
+    <header>
+        <a href="trangchu.html"><img id="header-logo" src="../images/logo.png" alt="logo Frozent yogurt"></a>
+        <img id="header-img1" src="../images/header-img1.png" alt="">
+        <img id="header-img2" src="../images/header-img2.png" alt="">
+        <img id="header-img3" src="../images/header-img3.png" alt="">
+        <nav>
+            <div class="nav-left">
+                <a href="trangchu.html">Trang chủ</a>
+                <a href="gioithieu.html">Giới thiệu</a>
+                <a href="sanpham.html">Sản phẩm</a>
+                <a href="tintuc.html">Tin tức</a>
+                <a href="dangnhap.html">Đăng nhập</a>
+                <a href="dangky.html">Đăng ký</a>
+                <a href="lienhe.html">Liên hệ</a>
+            </div>
+            <div class="nav-right">
+                <form name="frmSearch" action="timkiem.html" method="get">
+                    <input type="text" name="searchKeywords" id="search-keywords" placeholder="Nhập nội dung cần tìm" onkeydown="checkKeySearch(event)"/>
+                    <i class="fa-solid fa-magnifying-glass awesome fa-white" onclick="doSearch()"></i>
+                    <i class="fa-solid fa-cart-shopping awesome shopping" onclick="openCart()"></i>
+                </form>
+            </div>
+        </nav>
+    </header>
+    <main>
+        <article>
+            <h1 class="underline-h1 lien-he-h1">Liên hệ</h1>
+            <p><i class="fa-solid fa-location-dot awesome location"></i> Địa chỉ: 0123, Tòa Nhà ABC, TP. Cần Thơ. Nếu bạn có góp ý, vui lòng liên hệ bằng thư điện tử hoặc sử dụng biểu mẫu bên dưới. Xin cám ơn.</p>
+            <h1 class="underline-h1 lien-he-h1">Góp ý</h1>
+            <form class="form-lien-he" action="https://httpbin.org/anything" method="post" enctype="application/x-www-form-urlencoded" onsubmit="return contactValidation(this);" target="_blank">
+                <div>
+                    <i class="fa-solid fa-user awesome fa-white"></i>
+                    <input class="form-item" type="text" name="hoten" id="hoten" placeholder="Nhập họ tên" required>
+                </div>
+                <div>
+                    <i class="fa-solid fa-envelope awesome fa-white"></i>
+                    <input class="form-item" type="text" name="email" id="email" placeholder="Nhập email" required>
+                </div>
+                <div>
+                    <i class="fa-solid fa-list awesome fa-white"></i>
+                    <select class="form-item"  name="subject" id="subject">
+                        <option value="1">Về sản phẩm/ dịch vụ</option>
+                        <option value="2">Về ưu đãi thành viên</option>
+                        <option value="3">Về tin tuyển dụng</option>
+                    </select>
+                </div>
+                <div>
+                    <i class="fa-regular fa-note-sticky awesome fa-white"></i>
+                    <textarea class="form-item" name="message" id="message" rows="7" cols="50" placeholder="Nội dung cần liên hệ" required></textarea>
+                    </div>
+                <div class="submit-lien-he">
+                    <input type="submit" name="submit" id="submit" value="Gửi">
+                </div>
+            </form>
+        </article>
+    </main>
+    <footer>
+        <div class="footer-left">
+            &copy; 2021. Bản quyền thuộc về FreeezeVN.
+            <a href="#"><i class="fa-brands fa-facebook"></i></a>
+			<a href="#"><i class="fa-brands fa-twitter"></i></a>
+			<a href="#"><i class="fa-brands fa-pinterest"></i></a>
+        </div>
+<!--         <div class="footer-right">
+            <a href="#top"><img src="../images/top.png" alt=""></p>
+        </div>
+ -->    </footer>
+</body>
+</html>

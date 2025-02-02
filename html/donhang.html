@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Frozent yogurt - Đơn hàng</title>
+    <link rel="icon" href="../images/favicon.ico">
+    <link rel="stylesheet" href="../css/styles.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css"/>
+    <script src="../js/scripts.js"></script>
+    <script>
+        window.onload = function() {
+            showCart();
+        };
+    </script>
+</head>
+<body>
+    <header>
+        <a href="trangchu.html"><img id="header-logo" src="../images/logo.png" alt="logo Frozent yogurt"></a>
+        <img id="header-img1" src="../images/header-img1.png" alt="">
+        <img id="header-img2" src="../images/header-img2.png" alt="">
+        <img id="header-img3" src="../images/header-img3.png" alt="">
+        <nav>
+            <div class="nav-left">
+                <a href="trangchu.html">Trang chủ</a>
+                <a href="gioithieu.html">Giới thiệu</a>
+                <a href="sanpham.html">Sản phẩm</a>
+                <a href="tintuc.html">Tin tức</a>
+                <a href="dangnhap.html">Đăng nhập</a>
+                <a href="dangky.html">Đăng ký</a>
+                <a href="lienhe.html">Liên hệ</a>
+            </div>
+            <div class="nav-right">
+                <form name="frmSearch" action="timkiem.html" method="get">
+                    <input type="text" name="searchKeywords" id="search-keywords" placeholder="Nhập nội dung cần tìm" onkeydown="checkKeySearch(event)"/>
+                    <i class="fa-solid fa-magnifying-glass awesome fa-white" onclick="doSearch()"></i>
+                    <i class="fa-solid fa-cart-shopping awesome shopping" onclick="openCart()"></i>
+                </form>
+            </div>
+        </nav>
+    </header>
+    <main class="one-col">
+        <article class="main-content">
+            <h1 class="underline-h1 don-hang-h1">Chi tiết đơn hàng</h1>
+            <table class="don-hang-table-width table-border" id="cartDetail">
+                <thead class="table-header-color">
+                    <tr>
+                        <th class="table-border">Hình SP</th>
+                        <th class="table-border">Tên SP</th>
+                        <th class="table-border">Số lượng</th>
+                        <th class="table-border">Đơn giá</th>
+                        <th class="table-border">Thành tiền</th>
+                        <th class="table-border">Thao tác</th>
+                    </tr>
+                </thead>
+                <tbody>
+                </tbody>
+                <tfoot class="align-right">
+                    <tr>
+                        <td colspan="6" class="table-border">Tổng thành tiền (A) = <span id="bill_pre_tax_total"></span></td>
+                    </tr>
+                    <tr>
+                        <td colspan="6" class="table-border">Chiết khấu (B) = <span id="bill_discount"></span></td>
+                    </tr>
+                    <tr>
+                        <td colspan="6" class="table-border">Thuế (C) = 10% x (A - B) = <span id="bill_tax"></span></td>
+                    </tr>
+                    <tr>
+                        <td colspan="6" class="table-border">Tổng đơn hàng = A - B + C = <span id="bill_total"></span></td>
+                    </tr>
+<!--                     <tr>
+                        <td colspan="6" class="align-center"><button type="submit">Xác nhận đơn hàng</button></td>
+                    </tr>
+ -->                </tfoot>
+        </table>
+        <div class="submit-don-hang">
+            <button type="submit">Xác nhận đơn hàng</button>
+        </div>
+        </article>
+    </main>
+    <footer>
+        <div class="footer-left">
+            &copy; 2021. Bản quyền thuộc về FreeezeVN.
+            <a href="#"><i class="fa-brands fa-facebook"></i></a>
+			<a href="#"><i class="fa-brands fa-twitter"></i></a>
+			<a href="#"><i class="fa-brands fa-pinterest"></i></a>
+        </div>
+        <div class="footer-right">
+            <a href="#top"><img src="../images/top.png" alt=""></p>
+        </div>
+    </footer>
+</body>
+</html>

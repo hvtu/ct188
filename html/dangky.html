@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Frozent yogurt - Đăng ký thành viên</title>
+    <link rel="icon" href="../images/favicon.ico">
+    <link rel="stylesheet" href="../css/styles.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css"/>
+    <script src="../js/scripts.js"></script>
+</head>
+<body>
+    <header>
+        <a href="trangchu.html"><img id="header-logo" src="../images/logo.png" alt="logo Frozent yogurt"></a>
+        <img id="header-img1" src="../images/header-img1.png" alt="">
+        <img id="header-img2" src="../images/header-img2.png" alt="">
+        <img id="header-img3" src="../images/header-img3.png" alt="">
+        <nav>
+            <div class="nav-left">
+                <a href="trangchu.html">Trang chủ</a>
+                <a href="gioithieu.html">Giới thiệu</a>
+                <a href="sanpham.html">Sản phẩm</a>
+                <a href="tintuc.html">Tin tức</a>
+                <a href="dangnhap.html">Đăng nhập</a>
+                <a href="dangky.html">Đăng ký</a>
+                <a href="lienhe.html">Liên hệ</a>
+            </div>
+            <div class="nav-right">
+                <form name="frmSearch" action="timkiem.html" method="get">
+                    <input type="text" name="searchKeywords" id="search-keywords" placeholder="Nhập nội dung cần tìm" onkeydown="checkKeySearch(event)"/>
+                    <i class="fa-solid fa-magnifying-glass awesome fa-white" onclick="doSearch()"></i>
+                    <i class="fa-solid fa-cart-shopping awesome shopping" onclick="openCart()"></i>
+                </form>
+            </div>
+        </nav>
+    </header>
+    <main>
+        <form class="form-dang-ky" action="https://httpbin.org/anything" method="post" enctype="multipart/form-data" onsubmit="return frmValidate(this);" target="_blank">
+            <h1 class="underline-h1 dang-ky-h1">Đăng ký</h1>
+            <div>
+                <i class="fa-solid fa-envelope awesome fa-white"></i>
+                <input class="form-item" type="email" name="email" id="email" placeholder="Vui lòng nhập email" required pattern="^[a-zA-Z0-9._-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,4}$">
+            </div>
+            <div>
+                <i class="fa-solid fa-key awesome fa-white"></i>
+                <input class="form-item" type="password" name="psw1" id="psw1" placeholder="Vui lòng nhập mật khẩu" required minlength="8">
+            </div>
+            <div>
+                <i class="fa-solid fa-key awesome fa-white"></i>
+                <input class="form-item" type="password" name="psw2" id="psw2" placeholder="Nhập lại mật khẩu" required minlength="8">
+            </div>
+            <div>
+                <i class="fa-solid fa-users awesome fa-white"></i>
+                <span class="form-item">
+                    <input type="radio" name="type" id="type-silver" value="1" checked>
+                    <label for="type-silver">Bạc</label>
+                    <input type="radio" name="type" id="type-gold" value="2">
+                    <label for="type-gold">Vàng</label>
+                    <input type="radio" name="type" id="type-platium" value="3">
+                    <label for="type-platium">Bạch kim</label>
+                </span>
+            </div>
+            <div>
+                <i class="fa-solid fa-id-badge awesome fa-white"></i>
+                <input type="file" name="avatar" id="avatar" accept="image/*">
+            </div>
+            <div>
+                Thông qua việc tạo tài khoản, bạn đồng ý với<a href="#"> Điều khoản & Quyền riêng tư của chúng tôi.</a>
+            </div>
+            <div class="button-dang-ky">
+                <input type="reset" name="reset" id="reset" value="Hủy">
+                <input type="submit" name="submit" id="submit" value="Đăng ký">
+            </div>
+        </form>
+    </main>
+    <footer>
+        <div class="footer-left">
+            &copy; 2021. Bản quyền thuộc về FreeezeVN.
+            <a href="#"><i class="fa-brands fa-facebook"></i></a>
+			<a href="#"><i class="fa-brands fa-twitter"></i></a>
+			<a href="#"><i class="fa-brands fa-pinterest"></i></a>
+        </div>
+    </footer>
+</body>
+</html>
