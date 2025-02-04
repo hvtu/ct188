@@ -12,6 +12,7 @@
  -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css"/>
     <link rel="stylesheet" href="css/styles.css">
+    <script src="js/jquery-3.7.1.min.js"></script>
     <script src="js/scripts.js"></script>
 </head>
 
@@ -24,7 +25,7 @@
         <img id="header-img3" src="images/header-img3.png" alt="">
         <nav>
             <div class="nav-left">
-                <a href="html/trangchu.html">Trang chủ</a>
+                <a href="index.html">Trang chủ</a>
                 <a href="html/gioithieu.html">Giới thiệu</a>
                 <a href="html/sanpham.html">Sản phẩm</a>
                 <a href="html/tintuc.html">Tin tức</a>
@@ -36,7 +37,7 @@
                 <form name="frmSearch" action="html/timkiem.html" method="get">
                     <input type="text" name="searchKeywords" id="search-keywords" placeholder="Nhập nội dung cần tìm" onkeydown="checkKeySearch(event)"/>
                     <i class="fa-solid fa-magnifying-glass awesome fa-white" onclick="doSearch()"></i>
-                    <i class="fa-solid fa-cart-shopping awesome shopping" onclick="openCart()"></i>
+                    <i class="fa-solid fa-cart-shopping awesome shopping" onclick="openCartFromIndex()"></i>
                 </form>
             </div>
         </nav>

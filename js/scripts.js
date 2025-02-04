@@ -148,6 +148,12 @@ function addCart(code){
 }
 
 /*Chọn Giỏ hàng --> Mở trang Đơn hàng**/
+function openCartFromIndex(){
+    // window.location.href = "donhang.html";
+    window.open("html/donhang.html", "_blank");
+}
+
+/*Chọn Giỏ hàng --> Mở trang Đơn hàng**/
 function openCart(){
     // window.location.href = "donhang.html";
     window.open("donhang.html", "_blank");
@@ -300,3 +306,13 @@ hello = () => {
     return "Hello World!";
 }
 */
+
+$(document).ready(function(){
+    var path = window.location.href;
+    // because the 'href' property of the DOM element is the absolute path
+    $("nav .nav-left a").each(function() {
+        if (this.href === path) {
+            $(this).addClass(" active-page");
+        }
+    });
+});
