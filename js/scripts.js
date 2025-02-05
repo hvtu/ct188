@@ -371,8 +371,9 @@ var headlineContent = [
 
 // Khởi tạo
 function init(){
-//    $("article").prepend("<div id='headline'></div>");
-    $("header").after("<div id='headline'></div>");
+    // $("article").prepend("<div id='headline'></div>");
+    // $("header").after("<div id='headline'></div>");
+    $("#index").prepend("<div id='headline'></div>");
     for(var i=0; i<headlineContent.length; i++){
         var item = headlineContent[i];
         var divTemp = $("<div>");
