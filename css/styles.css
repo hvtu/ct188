@@ -484,3 +484,66 @@ h3 {
     border-radius: 5px;
     width: 100px;
 }
+
+.container {
+    position: fixed;
+    border: 1px solid red;
+    border-radius: 5px;
+    padding: 0px 5px;
+    overflow: hidden;
+    background-color: white;
+    box-shadow: 0 0 5px 0 #00000066, 0 0 5px 0 #0000004d;
+}
+
+.ads-ver-container {
+    left: 0;
+    top: 10px;
+    height: 145px;
+}
+
+.ads-ver-text {
+    white-space: wrap;
+}
+
+.ads-text {
+    position: absolute;
+    left: 5px;
+}
+
+.ads-hor-container {
+    bottom: 75px;
+    height: 37px;
+}
+
+.ads-hor-text {
+    white-space: nowrap;
+}
+
+#headline {
+    position: relative;
+    margin: 0 auto 20px;
+    padding: 0px;
+    width: 1035px;
+    height: 300px;
+}
+
+#headline div {
+    position: relative;
+    margin: 0 auto;
+}
+
+#headline div img {
+    margin: 0 auto;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.4);
+}
+
+#headline div span {
+    position: absolute;
+    left: 10px;
+    bottom: 10px;
+    padding: 0 5px;
+    border: 1px solid red;
+    border-radius: 3px;
+    background-color: white;
+    z-index: 10;
+}

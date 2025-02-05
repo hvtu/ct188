@@ -308,11 +308,90 @@ hello = () => {
 */
 
 $(document).ready(function(){
+
+    // Cập nhật trạng thái Active của link
     var path = window.location.href;
-    // because the 'href' property of the DOM element is the absolute path
+    // Thuộc tính 'href' trong DOM là đường dẫn tuyệt đối
     $("nav .nav-left a").each(function() {
         if (this.href === path) {
             $(this).addClass(" active-page");
         }
     });
+
+    // Hiển thị quảng cáo
+    var d = new Date();
+    var ads = "Khách hàng có ngày sinh trong tháng " + d.getMonth() + " sẽ được tặng 2 phần sữa chua dâu cho đơn hàng đầu tiên trong tháng.";
+    $("footer").append("<div id='ads-container'><span id='ads-text'><h2>" + ads + "</h2></span></div>");
+    var w = ($(window).width() - $("main").width())/2;
+    if(w >= 200){
+        adsVerEffect();
+    }
+    else{
+        adsHorEffect();
+    }
+
+    // Hiển thị tin nổi bật ở trang chủ
+    headlineEffect();
 });
+
+/*Quảng cáo cuộn dọc màn hình**/
+function adsVerEffect(){
+    $("#ads-container").addClass("container ads-ver-container")
+    $("#ads-container").css("width", ($(window).width() - $("main").width())/2);
+    $("#ads-text").addClass("ads-ver-text ads-text");
+    $("#ads-text").css("top", $("#ads-container").height());
+    $("#ads-text").animate({
+        top: '-=' + ($("#ads-container").height() + $("#ads-text").height())}, 18000, function(){
+            adsVerEffect();
+        });    
+}
+
+/*Quảng cáo cuộn ngang màn hình**/
+function adsHorEffect(){    
+    $("#ads-container").addClass("container ads-hor-container")
+    $("#ads-container").css("left", $("main").position().left);
+    $("#ads-container").css("width", $("main").width());
+    $("#ads-text").addClass("ads-hor-text ads-text");
+    $("#ads-text").css("left", $("#ads-container").width());
+    $("#ads-text").animate({
+        left: '-=' + ($("#ads-container").width() + $("#ads-text").width())}, 30000, function(){
+            adsHorEffect();
+        });    
+}
+
+
+/*Danh mục tin nổi bật**/
+var headlineContent = [
+    {"title":"Bánh flan sữa chua - sự kết hợp hoàn hảo", 
+        "photo":"/images/trangchu/headline1.jpg"}, 
+    {"title":"Sữa chua làm từ sữa dê - đậm đà hương vị khó quên", 
+        "photo":"/images/trangchu/headline2.jpg"}, 
+    {"title":"Thưởng thức sữa chua theo cách của bạn", 
+        "photo":"/images/trangchu/headline3.jpg"}]
+
+// Khởi tạo
+function init(){
+//    $("article").prepend("<div id='headline'></div>");
+    $("header").after("<div id='headline'></div>");
+    for(var i=0; i<headlineContent.length; i++){
+        var item = headlineContent[i];
+        var divTemp = $("<div>");
+        $("<span><h3>" + item.title + "</h3></span>").appendTo(divTemp);
+        $("<img src='" + item.photo + "'>").appendTo(divTemp);
+        $("#headline").append(divTemp);
+    }
+}
+
+function headlineEffect(){ 
+    init();
+    // Ẩn các thẻ div sau thẻ div đầu tiên
+    $("#headline > div:gt(0)").hide();
+    setInterval(function() {
+        $("#headline > div:first")
+            .hide()
+            .next()
+            .fadeIn(1000)
+            .end()
+            .appendTo("#headline");
+    }, 5000);
+}
