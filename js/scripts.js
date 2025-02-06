@@ -311,12 +311,17 @@ $(document).ready(function(){
 
     // Cập nhật trạng thái Active của link
     var path = window.location.href;
-    // Thuộc tính 'href' trong DOM là đường dẫn tuyệt đối
-    $("nav .nav-left a").each(function() {
-        if (this.href === path || path.endsWith("/")) {
-            $(this).addClass(" active-page");
-        }
-    });
+    // Kiểm tra riêng trường hợp URL không hiển thị 'index.html' khi mở lần đầu
+    if(path.endsWith("/")){
+        $("nav .nav-left a").addClass(" active-page");
+    }
+    else{
+        $("nav .nav-left a").each(function() {
+            if (this.href === path) {
+                $(this).addClass(" active-page");
+            }
+        });
+    }
 
     // Hiển thị quảng cáo
     var d = new Date();
