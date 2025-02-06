@@ -172,9 +172,7 @@ main {
 
 main.one-col {
     grid-template-areas: 
-        'left-cell'
         'article-cell'
-        'right-cell';
 }
 
 main.two-cols-left {
@@ -521,10 +519,11 @@ h3 {
 
 #headline {
     position: relative;
-    margin: 0 auto 20px;
+    margin: 0 auto 9px;
     padding: 0px;
     width: 1035px;
     height: 300px;
+    border-radius: 5px;
 }
 
 #headline div {
@@ -534,6 +533,7 @@ h3 {
 
 #headline div img {
     margin: 0 auto;
+    border-radius: 5px;
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.4);
 }
 

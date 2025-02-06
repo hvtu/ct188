@@ -313,7 +313,7 @@ $(document).ready(function(){
     var path = window.location.href;
     // Thuộc tính 'href' trong DOM là đường dẫn tuyệt đối
     $("nav .nav-left a").each(function() {
-        if (this.href === path) {
+        if (this.href === path || this.href.endsWith("/")) {
             $(this).addClass(" active-page");
         }
     });
@@ -360,7 +360,7 @@ function adsHorEffect(){
 }
 
 
-/*Danh mục tin nổi bật cho Trang chủ**/
+/*Danh mục tin nổi bật **/
 var headlineContent = [
     {"title":"Bánh flan sữa chua - sự kết hợp hoàn hảo", 
         "photo":"images/trangchu/headline1.jpg"}, 
@@ -369,36 +369,23 @@ var headlineContent = [
     {"title":"Thưởng thức sữa chua theo cách của bạn", 
         "photo":"images/trangchu/headline3.jpg"}]
 
-/*Danh mục tin nổi bật cho các trang khác - đường dẫn hình khác nhau**/
-var headlineContent2 = [
-    {"title":"Bánh flan sữa chua - sự kết hợp hoàn hảo", 
-        "photo":"../images/trangchu/headline1.jpg"}, 
-    {"title":"Sữa chua làm từ sữa dê - đậm đà hương vị khó quên", 
-        "photo":"../images/trangchu/headline2.jpg"}, 
-    {"title":"Thưởng thức sữa chua theo cách của bạn", 
-        "photo":"../images/trangchu/headline3.jpg"}]
-
 // Khởi tạo
 function init(){
     // $("article").prepend("<div id='headline'></div>");
     // $("header").after("<div id='headline'></div>");
-    if($("#index").length > 0){
-        $("#index").before("<div id='headline'></div>");
+    if($("#has-headline").length > 0){
+        $("#has-headline").before("<div id='headline'></div>");
         for(var i=0; i<headlineContent.length; i++){
             var item = headlineContent[i];
             var divTemp = $("<div>");
+            var path = window.location.href;
             $("<span><h3>" + item.title + "</h3></span>").appendTo(divTemp);
-            $("<img src='" + item.photo + "'>").appendTo(divTemp);
-            $("#headline").append(divTemp);
-        }
-    }
-    else{
-        $("#not-index").before("<div id='headline'></div>");
-        for(var i=0; i<headlineContent.length; i++){
-            var item = headlineContent2[i];
-            var divTemp = $("<div>");
-            $("<span><h3>" + item.title + "</h3></span>").appendTo(divTemp);
-            $("<img src='" + item.photo + "'>").appendTo(divTemp);
+            if (path.endsWith("index.html") || path.endsWith("/")) {
+                $("<img src='" + item.photo + "'>").appendTo(divTemp);
+            }
+            else{
+                $("<img src='../" + item.photo + "'>").appendTo(divTemp);
+            }
             $("#headline").append(divTemp);
         }
     }
