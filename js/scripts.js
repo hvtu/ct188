@@ -313,7 +313,7 @@ $(document).ready(function(){
     var path = window.location.href;
     // Thuộc tính 'href' trong DOM là đường dẫn tuyệt đối
     $("nav .nav-left a").each(function() {
-        if (this.href === path || this.href.endsWith("/")) {
+        if (this.href === path || path.endsWith("/")) {
             $(this).addClass(" active-page");
         }
     });
