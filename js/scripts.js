@@ -313,7 +313,7 @@ $(document).ready(function(){
     var path = window.location.href;
     // Kiểm tra riêng trường hợp URL không hiển thị 'index.html' khi mở lần đầu
     if(path.endsWith("/")){
-        $("nav .nav-left a").addClass(" active-page");
+        $("nav .nav-left:first-child").addClass(" active-page");
     }
     else{
         $("nav .nav-left a").each(function() {
